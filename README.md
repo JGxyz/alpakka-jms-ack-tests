@@ -11,7 +11,11 @@ Requirements for running the tests:
     cd mq-container
     make build-devserver
     ```
-  - make sure that the image version aligns with the version specified in the `ibmmq-m1.yml` file (if not, change the version in the file to the one you have locally)
+  - make sure that the image version aligns with the version specified in the `ibmmq-m1.yml` file (if not, change the version in the file to the one you have locally),
+  - run the image using the following command:
+    ```bash
+    docker-compose -f ibmmq-m1.yml up --detach
+    ```
 
 ## Running the tests
 
