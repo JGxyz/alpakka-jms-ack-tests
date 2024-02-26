@@ -1,0 +1,22 @@
+---
+version: '3'
+
+services:
+  ibmmq:
+    # To build the image locally follow the instruction from https://community.ibm.com/community/user/integration/blogs/richard-coppen/2023/06/30/ibm-mq-9330-container-image-now-available-for-appl?CommunityKey=183ec850-4947-49c8-9a2e-8e7c7fc46c64:
+    # git clone https://github.com/ibm-messaging/mq-container.git
+    # cd mq-container
+    # make build-devserver
+    image: ibm-mqadvanced-server-dev:9.3.4.1-arm64
+    hostname: ibmmq
+    container_name: ibmmq
+    restart: always
+    environment:
+      LICENSE: accept
+      MQ_QMGR_NAME: QM1
+      MQ_APP_PASSWORD: passw0rd
+      MQ_ADMIN_PASSWORD: passw0rd
+      DEBUG: true
+    ports:
+      - "1414:1414"
+      - "9443:9443" # https://localhost:9443/ibmmq/console
