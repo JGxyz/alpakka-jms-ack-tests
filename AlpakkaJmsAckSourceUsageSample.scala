@@ -31,7 +31,7 @@ object AlpakkaJmsAckSourceUsageSample {
   case class IbmMQConnectionConfig(hostname: String, port: Int, queueManager: String, channel: String)
 
   def main(args: Array[String]): Unit = {
-    implicit val system = ActorSystem(Behaviors.empty[NotUsed], "AlpakkaJmsAckTest")
+    implicit val system = ActorSystem(Behaviors.empty[NotUsed], "AlpakkaJmsAckSourceUsageSample")
     implicit val ec = system.executionContext
 
     val connectionConfig: IbmMQConnectionConfig = IbmMQConnectionConfig(
@@ -59,8 +59,6 @@ object AlpakkaJmsAckSourceUsageSample {
       .withAckTimeout(1.second)
       .withMaxPendingAcks(10)
       .withAcknowledgeMode(AcknowledgeMode.ClientAcknowledge)
-
-    println(consumerSettings.maxPendingAcks)
 
     val jmsSink: Sink[JmsTextMessage, Future[Done]] = JmsProducer.sink(producerSettings)
 
