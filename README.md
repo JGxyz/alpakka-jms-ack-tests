@@ -1,1 +1,1 @@
-# alpakka-jms-ack-tests
+# Tests for Alpakka JMS ackSource using IBM MQ
