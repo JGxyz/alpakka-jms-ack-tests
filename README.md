@@ -3,8 +3,8 @@
 ## Requirements
 
 Requirements for running the tests:
-- scala-cli: https://scala-cli.virtuslab.org/install
-- local IBM MQ server (for `AlpakkaJmsAckTest` and `AlpakkaJmsOriginalTestLocalIbmMqServer`):
+- scala-cli: https://scala-cli.virtuslab.org/install,
+- local IBM MQ server (for `AlpakkaJmsAckSourceUsageSample` and `AlpakkaJmsAckOriginalTestLocalIbmMqServer`):
   - build local image using the following commands:
     ```bash
     git clone https://github.com/ibm-messaging/mq-container.git
