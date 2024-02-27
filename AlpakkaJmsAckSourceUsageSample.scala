@@ -55,9 +55,9 @@ object AlpakkaJmsAckSourceUsageSample {
       .withCredentials(credentials)
       .withConnectionRetrySettings(ConnectionRetrySettings(system))
       .withSessionCount(4)
-      .withBufferSize(100)
+      .withBufferSize(2)
       .withAckTimeout(1.second)
-      .withMaxPendingAcks(10)
+      .withMaxPendingAcks(2)
       .withAcknowledgeMode(AcknowledgeMode.ClientAcknowledge)
 
     val jmsSink: Sink[JmsTextMessage, Future[Done]] = JmsProducer.sink(producerSettings)
